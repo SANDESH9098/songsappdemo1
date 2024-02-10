@@ -1,0 +1,30 @@
+{% extends 'songs/base.html' %}
+
+{% block Title %}
+    {{ song.title }}
+{% endblock %}
+
+{% block Content %}
+
+<div class="container mt-5">
+    <h1 class="display-6">{{ song.title }}</h1> <!-- Even smaller title with display-6 -->
+    <hr class="my-4">
+    <article class="mb-5">
+        <!-- Use p instead of div for text, with text-break to ensure wrapping -->
+        <p class="lead bg-light p-3 rounded" style="white-space: pre-wrap; font-size: 0.9rem;"> <!-- Adjust font size as needed -->
+            {{ song.body }}
+        </p>
+    </article>
+    <!-- Additional song details here -->
+{#    <section>#}
+{#        <h2 class="h6">Details</h2>#}
+{#        <p><strong>Song Number:</strong> {{ song.number }}</p>#}
+{#        <p><strong>Status:</strong> {{ song.get_status_display }}</p>#}
+{#        <p><strong>Tags:</strong> {{ song.tags }}</p>#}
+{#    </section>#}
+</div>
+
+{% endblock %}
+
+
+

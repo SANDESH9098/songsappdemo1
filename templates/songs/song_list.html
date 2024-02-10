@@ -1,0 +1,43 @@
+{% extends 'songs/base.html' %}
+
+{% block Title %}
+ SONGS BOOK
+{% endblock %}
+
+{% block Content %}
+
+    <nav class="navbar navbar-custom navbar-expand-lg">
+  <div class="container-fluid search-container">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#">SONGS BOOK</a>
+    <!-- Search form -->
+    <form class="search-form d-flex" method="get" action="{% url 'song_list' %}">
+      <input class="form-control me-2 search-input" type="text" name="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light search-button" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+
+
+    <ul class="list-group">
+    <li class="list-group-item custom-link-group-item d-flex justify-content-between align-items-center bg-danger custom-color" style="position: sticky ; top:0; z-index: 2">
+        <div class="ms-2 me-auto custom-list-header">
+            <div class="fw-bold">పాట పేరు</div>
+        </div>
+        <span class="badge custom-color " >సంఖ్య</span>
+
+    </li>
+    {% for song in songs %}
+        <a href="{{ song.get_absolute_url }}" class="list-group-item custom-link-group-item d-flex justify-content-between align-items-center">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">{{ song.title }}</div>
+                 </div>
+            <span class="badge bg-primary "  >{{ song.song_Number }}</span>
+
+        </a>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

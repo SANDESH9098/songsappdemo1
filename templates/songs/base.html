@@ -1,0 +1,77 @@
+{% load widget_tweaks %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+
+        .navbar-custom {
+    background-color: #007bff; /* Assuming this is the color you want for the top bar */
+    color: #ffffff; /* This is for the text color */
+  }
+  .bg-red {
+    background-color: #ff0000; /* This is the red background color used in your example */
+  }
+  .search-container {
+    position: relative; /* Needed to position the search form absolutely within it */
+  }
+  .search-form {
+    position: absolute;
+    right: 1rem; /* Adjust as necessary */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+  }
+  .search-input {
+    border-radius: 20px; /* Rounded borders on the input */
+  }
+  .search-button {
+    border-radius: 20px; /* Consistent rounded borders on the button */
+    border: 0; /* Remove default border */
+    box-shadow: none; /* Remove default box-shadow if any */
+  }
+
+    .custom-list-header {
+        color: white;
+    }
+
+  .custom-header {
+    background-color: #ff0000; /* Adjust the color to match your need */
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+  }
+  .custom-link-group-item {
+    border: none; /* Removes the default border */
+    border-bottom: 1px solid #ddd; /* Adds a border to the bottom of each item */
+    color: inherit; /* Ensures the text color is not changed by the link */
+    text-decoration: none; /* No underline for the link */
+  }
+  .custom-link-group-item:hover {
+    background-color: #f8f9fa; /* Slight change on hover for feedback */
+  }
+  .custom-badge {
+    background-color: #ff0000; /* Same red as the header for consistency */
+  }
+  /* Other custom styles */
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block Title %}Songs Book{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        {% block Content %}
+
+        {% endblock %}
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
